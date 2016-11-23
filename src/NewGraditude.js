@@ -24,16 +24,29 @@ export default class NewGraditude extends Component {
   render() {
     return (
       <div className="NewGraditude">
-          <h2>This Is A NewGraditude Input</h2>
+          <h2>Please send out some Gratitude</h2>
           <form>
             <FormGroup
-              controlId="formBasicText"
+              controlId="formNameText"
+              validationState={this.getValidationState()}
+            >
+              I'm gratful to:
+              <FormControl
+                type="text"
+                value={this.state.value}
+                placeholder="Enter a Name, Thing, or Whatever you feel is needed"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+            for
+            <FormGroup
+              controlId="formGratitudeText"
               validationState={this.getValidationState()}
             >
               <FormControl
                 type="text"
                 value={this.state.value}
-                placeholder="Enter text"
+                placeholder="What are you grateful for?"
                 onChange={this.handleChange}
               />
             </FormGroup>
